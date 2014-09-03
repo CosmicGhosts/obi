@@ -42,7 +42,12 @@ describe 'obi', ->
         expect(@obi.extend(foo: 'foo').done()).to.eql foo: 'foo'
 
   describe 'immutability', ->
-    context 'when obi is given an object initially', ->
+    context 'when obi is given an object', ->
       o 'clones the object', ->
         foo = foo: 'foo'
         expect(obi(foo).done()).to.not.equal foo
+
+      o 'clones the nested properties of an object', ->
+        foo = foo: bar: 'foo', baz: fizz: 'buzz'
+        obj = obi(foo).done()
+        expect(obj.foo.baz).to.not.equal foo.foo.baz

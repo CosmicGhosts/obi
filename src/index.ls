@@ -1,9 +1,10 @@
-{_extend} = require 'util'
+_ = require 'lodash'
 
-obi = (initialObject) ->
-  initialObject = _extend({}, initialObject)
+obi = (initialObject = {}) ->
+  unless _.isEmpty initialObject
+    initialObject = _.cloneDeep initialObject
   extend: (extension) ->
-    obi _extend(initialObject, extension)
+    obi _.extend(initialObject, extension)
   done: -> initialObject
 
 module.exports = obi
