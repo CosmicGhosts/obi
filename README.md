@@ -1,8 +1,9 @@
 Obi
 ===
 
-Obi is a simple object builder that allows you to compose objects together with immutability.
-
+Obi is a simple object builder that allows you to compose objects together with immutability.  
+AKA Obi will build an object out of other objects without altering the object references you gave it.  
+It also does its best to deeply clone an object. See lodash's cloneDeep method for more details.
 
 # API
 You use Obi by requiring the obi module
