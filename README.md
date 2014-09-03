@@ -12,7 +12,7 @@ var obi = require('obi');
 
 ### obi
 either give obi an object to wrap or just invoke obi. obi will use an empty object by default.
-The cool part here is that obi will return an method to keep extending the object.
+The cool part here is that obi will return an method to keep extending the object.  
 ```obi()``` or ```obi({foo: 'foo'})``` will return the ```extend``` and ```done``` methods for the object state.
 
 
