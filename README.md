@@ -1,7 +1,7 @@
 Obi
 ===
 
-Obi is a simple object constructor that allows you to compose objects together with immutability.
+Obi is a simple object builder that allows you to compose objects together with immutability.
 
 
 # API
