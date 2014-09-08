@@ -27,6 +27,5 @@
     "sinon-chai": "^2.5.0"
   },
   "dependencies": {
-    "lodash": "^2.4.1"
   }
 }

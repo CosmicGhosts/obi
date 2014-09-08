@@ -48,6 +48,9 @@ describe 'obi', ->
         expect(obi(foo).done()).to.not.equal foo
 
       o 'clones the nested properties of an object', ->
-        foo = foo: bar: 'foo', baz: fizz: 'buzz'
+        foo = foo:
+          bar: 'foo',
+          baz:
+            fizz: 'buzz'
         obj = obi(foo).done()
         expect(obj.foo.baz).to.not.equal foo.foo.baz

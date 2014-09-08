@@ -1,9 +1,15 @@
-_ = require 'lodash'
+deepClone = (obj) ->
+  other = Object.create obj
+  for own key, value of obj when value instanceof Object
+    other[key] = deepClone(value)
+  other
 
-obi = (initialObject = {}) ->
-  initialObject = _.cloneDeep initialObject
+obi = (obj = {}) ->
+  initialObject = deepClone obj
   extend: (extension) ->
-    obi _.extend(initialObject, extension)
+    for key, value of extension
+      initialObject[key] = extension[key]
+    this
   done: -> initialObject
 
 module.exports = obi
