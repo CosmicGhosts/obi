@@ -1,14 +1,22 @@
+util = require 'util'
+
 deepClone = (obj) ->
-  other = Object.create obj
-  for own key, value of obj when value instanceof Object
-    other[key] = deepClone(value)
-  other
+  return obj unless typeof obj is 'object'
+  if util.isArray obj
+    obj.map (x) -> deepClone(x)
+  else
+    other = Object.create obj
+    for own key, value of obj when value instanceof Object
+      other[key] = deepClone(value)
+    other
 
 obi = (obj = {}) ->
   initialObject = deepClone obj
   extend: (extension) ->
-    for key, value of extension
-      initialObject[key] = extension[key]
+    if util.isArray(initialObject) and util.isArray(extension)
+      initialObject := [...initialObject, ...extension]
+    else
+      util._extend(initialObject, extension)
     this
   done: -> initialObject
 
