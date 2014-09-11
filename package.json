@@ -1,7 +1,7 @@
 {
   "name": "obi",
   "version": "0.1.3",
-  "description": "a simple, immutable object constructor",
+  "description": "a simple object builder with immutability",
   "main": "./lib/index.js",
   "scripts": {
     "cc": "./node_modules/.bin/lsc -o lib -c src/*.ls",
