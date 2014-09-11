@@ -1,6 +1,6 @@
 {
   "name": "obi",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "a simple, immutable object constructor",
   "main": "./lib/index.js",
   "scripts": {
