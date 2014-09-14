@@ -1,9 +1,8 @@
 _ = require 'lodash'
+soc = require 'soc'
 
 obi = (initialObject = {}) ->
   initialObject = _.cloneDeep initialObject
-  extend: (extension) ->
-    obi _.extend(initialObject, extension)
-  done: -> initialObject
+  soc(initialObject)
 
 module.exports = obi
