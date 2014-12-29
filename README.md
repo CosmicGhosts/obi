@@ -7,7 +7,7 @@ It also does its best to deeply clone an object. See lodash's cloneDeep method f
 
 # API
 You use Obi by requiring the obi module
-```
+```javascript
 var obi = require('obi');
 ```
 
@@ -21,7 +21,7 @@ The cool part here is that obi will return an method to keep extending the objec
 ### extend
 if you want to keep building on top of that object, use extend to immutably extend the object.
 The cool part is obi will recursively return new obi objects while cloning the object you pass in.
-```
+```javascript
 obj = obi()
 obj.extend({foo: 'foo'}) # => obi({foo: 'foo'})
 ```
@@ -29,7 +29,7 @@ obj.extend({foo: 'foo'}) # => obi({foo: 'foo'})
 
 ### done
 once you're done extending the object you created with obi, use ```done``` to return the final object
-```
+```javascript
 obj = obi()
 obj.extend({foo: 'foo'}).extend({bar: 'bar'}).done() # => {foo: 'foo', bar: 'bar'}
 ```
